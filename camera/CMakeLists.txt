@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8.3)
+set(CMAKE_CXX_FLAGS "-std=c++0x -I/usr/local/include -lraspicam")
 project(camera)
-set(CMAKE_CXX_FLAGS "-std=c++11 -I/usr/local/indluce -lraspicam")
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -116,13 +116,11 @@ catkin_package(
 # include_directories(include)
 include_directories(
   ${catkin_INCLUDE_DIRS}
-  
 )
 
 ## Declare a C++ library
 # add_library(camera
-#   src/${PROJECT_NAME}/simple_camera.cpp
-#   ~/Documents/raspicam-0.1.3
+#   src/${PROJECT_NAME}/camera.cpp
 # )
 
 ## Add cmake target dependencies of the library
@@ -131,14 +129,21 @@ include_directories(
 # add_dependencies(camera ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Declare a C++ executable
-add_executable(simple_camera src/simple_camera.cpp)
+add_executable(camera src/simple_camera.cpp)
+target_link_libraries(camera ${raspicam_LIBS})
+target_link_libraries(camera ${catkin_LIBRARIES})
+
+add_executable(imagePub src/imagePub.cpp)
+target_link_libraries(imagePub ${raspicam_LIBS})
+target_link_libraries(imagePub ${catkin_LIBRARIES})
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above
 # add_dependencies(camera_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
-target_link_libraries(simple_camera ${raspicam_LIBS})
+
+
 
 #############
 ## Install ##
