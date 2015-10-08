@@ -1,0 +1,8 @@
+prefix=/home/osboxes/catkin_ws/src/rsa/camera/build/devel
+
+Name: camera
+Description: Description of camera
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/osboxes/catkin_ws/src/rsa/camera/build/devel/lib 
+Requires: 

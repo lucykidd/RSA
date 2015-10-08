@@ -1,0 +1,1 @@
+/usr/bin/c++   -std=c++11 -I/usr/local/indluce -lraspicam    CMakeFiles/simple_camera.dir/src/simple_camera.cpp.o  -o devel/lib/camera/simple_camera -rdynamic 

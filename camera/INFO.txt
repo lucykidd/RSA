@@ -1,0 +1,22 @@
+pberry pi receiving data from the Ribbon Cable:
+- Connect to the internet
+- sudo apt-get update
+- sudo apt-get upgrade -y
+- sudo raspi-config
+- Check 'Advanced > Memory_split' is set to 128, if not set it
+- Choose 'Enable Camera'
+- Select Finish and choose to Reboot
+
+raspivid [options] runs the camera
+(raspivid --demo)
+
+Follow instructions from the link below for a basic C++ api for the camera. 
+http://www.uco.es/investiga/grupos/ava/node/40
+
+Install sensor_msgs:
+
+
+
+I made a Camera package on the  built emu. 
+
+
